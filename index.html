@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+ font-family:'Trebuchet MS',Arial,sans-serif;
+ background:linear-gradient(135deg,#ffe0ec,#f5d9ff,#fff0f5);
+ color:#713c59;
+ text-align:center;
+ overflow-x:hidden;
+}
+
+section{
+ display:none;
+ min-height:100vh;
+ padding:35px 18px;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ animation:fade .8s ease;
+}
+
+section.active{display:flex}
+
+@keyframes fade{
+ from{opacity:0;transform:translateY(20px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+h1{
+ color:#df4e8c;
+ font-size:clamp(30px,6vw,48px);
+ margin:15px 0;
+}
+
+h2{color:#d94d87;margin:15px}
+
+p{
+ font-size:17px;
+ line-height:1.8;
+ max-width:650px;
+ margin:12px auto;
+}
+
+button{
+ background:#ed78a7;
+ color:white;
+ border:0;
+ border-radius:30px;
+ padding:14px 28px;
+ font-size:16px;
+ cursor:pointer;
+ margin-top:20px;
+ box-shadow:0 5px 15px #e9a5c5;
+ transition:.3s;
+}
+
+button:hover{
+ background:#d94d87;
+ transform:scale(1.06);
+}
+
+.heart{
+ font-size:110px;
+ animation:beat 1s infinite;
+}
+
+@keyframes beat{
+ 50%{transform:scale(1.2)}
+}
+
+.card{
+ background:rgba(255,255,255,.9);
+ padding:30px 22px;
+ width:min(92%,550px);
+ border-radius:25px;
+ box-shadow:0 10px 35px #d99ab9;
+ border:2px solid white;
+}
+
+.thumbnail{
+ width:min(95%,850px);
+ border-radius:22px;
+ border:5px solid white;
+ box-shadow:0 10px 30px #c98ba9;
+ margin:15px auto;
+}
+
+.story-art{
+ width:min(90vw,430px);
+ aspect-ratio:1/1;
+ background-image:url("birthday-storyboard.png");
+ background-size:300% 300%;
+ background-repeat:no-repeat;
+ border:6px solid white;
+ border-radius:25px;
+ box-shadow:0 10px 30px #d99ab9;
+ margin:20px auto;
+ animation:pop 1s ease;
+}
+
+@keyframes pop{
+ from{transform:scale(.8);opacity:0}
+ to{transform:scale(1);opacity:1}
+}
+
+.float{
+ position:fixed;
+ bottom:-60px;
+ font-size:30px;
+ pointer-events:none;
+ animation:rise 8s linear forwards;
+ z-index:10;
+}
+
+@keyframes rise{
+ to{transform:translateY(-115vh) rotate(25deg);opacity:0}
+}
+
+.wish{
+ background:white;
+ padding:18px;
+ border-radius:20px;
+ margin:12px auto;
+ width:min(90%,550px);
+ box-shadow:0 5px 15px #efbdd3;
+}
+
+.final-card{
+ background:white;
+ padding:35px 25px;
+ border-radius:25px;
+ max-width:650px;
+ width:95%;
+ box-shadow:0 10px 35px #d99ab9;
+}
+
+footer{
+ margin-top:25px;
+ color:#b45d82;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING HEARTS -->
+<div id="floating"></div>
+
+<!-- SCREEN 1 -->
+<section class="active" id="s1">
+ <div class="heart">❤️</div>
+ <h1>A Little Surprise For You</h1>
+ <img src="birthday-thumbnail.png" class="thumbnail"
+ alt="A special birthday surprise">
+ <p>Someone special has prepared something beautiful for you...</p>
+ <button onclick="next(2)">Open Your Surprise 💗</button>
+</section>
+
+<!-- SCREEN 2 -->
+<section id="s2">
+ <div class="heart">💗</div>
+ <h1>I Love You</h1>
+ <p>You are one of the most beautiful parts of my life.</p>
+ <p>Today, this little surprise is only for you. 🥹</p>
+ <button onclick="next(3)">Continue My Love 💕</button>
+</section>
+
+<!-- SCREEN 3 -->
+<section id="s3">
+ <div class="card">
+  <div class="heart">💌</div>
+  <h1>A Birthday Letter</h1>
+  <p>There is something special waiting inside this little story.</p>
+  <button onclick="next(4)">Open The Card 💝</button>
+ </div>
+</section>
+
+<!-- SCREEN 4 -->
+<section id="s4">
+ <h1>Guess What? 🥹</h1>
+ <div class="story-art" style="background-position:0% 50%"></div>
+ <p>A cute girl has a special birthday gift for her favorite boy!</p>
+ <button onclick="next(5)">See Your Surprise ❤️</button>
+</section>
+
+<!-- SCREEN 5 -->
+<section id="s5">
+ <div class="story-art" style="background-position:100% 50%"></div>
+ <h1>Happy Birthday</h1>
+ <h1>MY LOVE ❤️</h1>
+ <p>Today is all about you, my favorite person!</p>
+ <button onclick="next(6)">Read My Wishes 💗</button>
+</section>
+
+<!-- SCREEN 6 -->
+<section id="s6">
+ <h1>My Birthday Wishes 🌷</h1>
+
+ <div class="wish">
+  🌸 May your life always be filled with happiness, love and endless smiles.
+ </div>
+
+ <div class="wish">
+  ❤️ May all your dreams come true and may you achieve everything your heart wishes for.
+ </div>
+
+ <div class="wish">
+  🥹 May you always have reasons to smile, even on your hardest days.
+ </div>
+
+ <div class="wish">
+  💗 I hope this new chapter brings you beautiful memories, success and peace.
+ </div>
+
+ <div class="wish">
+  🫶 Most importantly, I hope you always feel loved and special.
+ </div>
+
+ <button onclick="next(7)">Next Surprise 🎀</button>
+</section>
+
+<!-- SCREEN 7 -->
+<section id="s7">
+ <h1>Decorating Your Birthday Room 🎀</h1>
+ <div class="story-art" style="background-position:50% 50%"></div>
+ <p>Look! Your girl is decorating everything with so much love, just for you!</p>
+ <button onclick="next(8)">The Party Begins 🎉</button>
+</section>
+
+<!-- SCREEN 8 -->
+<section id="s8">
+ <h1>It's Celebration Time! 🎉</h1>
+ <div class="story-art" style="background-position:100% 50%"></div>
+ <h2>Make A Wish, My Love! 🎂</h2>
+ <p>May your birthday be as beautiful and special as you are.</p>
+ <button onclick="next(9)">One Last Thing... 🥺</button>
+</section>
+
+<!-- SCREEN 9 -->
+<section id="s9">
+ <div class="final-card">
+  <h1>One Last Message ❤️</h1>
+
+  <p>So finally, today is your day! 🥹❤️</p>
+
+  <p>
+   I want to celebrate your day with you,
+   but it's okay. I hope one day we will
+   celebrate your day together with even more happiness.
+  </p>
+
+  <p>
+   I never wanna lose you.
+   I'm very happy to have you in my life.
+   You mean more to me than words can ever explain.
+  </p>
+
+  <p>
+   No matter how far we are,
+   you will always have a special place in my heart.
+  </p>
+
+  <h2>Happy Birthday Once Again, My Love! 💗</h2>
+
+  <button onclick="next(10)">A Hug For You 🫂</button>
+ </div>
+</section>
+
+<!-- SCREEN 10 -->
+<section id="s10">
+ <h1>Come Here, My Love! 🥺</h1>
+ <div class="story-art" style="background-position:50% 100%"></div>
+ <h1>Biggest Virtual Hug! 🫂</h1>
+ <p>If I could be anywhere right now, I would choose to be right beside you. ❤️</p>
+ <h2>Forever Sending You Love 💗</h2>
+ <div class="heart">💕</div>
+ <p>Thank you for being you. I love you!</p>
+ <button onclick="next(1)">Replay Our Little Story 💕</button>
+ <footer>Made with endless love ❤️</footer>
+</section>
+
+<script>
+
+// CHANGE BETWEEN SCREENS
+function next(number){
+ document.querySelectorAll("section").forEach(s=>{
+  s.classList.remove("active");
+ });
+ document.getElementById("s"+number).classList.add("active");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+// FLOATING HEARTS AND BALLOONS
+const floating=document.getElementById("floating");
+const emojis=["❤️","💗","💕","🌸","🎈","✨","💖"];
+
+function createFloat(){
+ const item=document.createElement("div");
+ item.className="float";
+ item.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+ item.style.left=Math.random()*100+"vw";
+ item.style.animationDuration=(5+Math.random()*5)+"s";
+ floating.appendChild(item);
+ setTimeout(()=>item.remove(),10000);
+}
+
+setInterval(createFloat,700);
+
+</script>
+
+</body>
+</html>
